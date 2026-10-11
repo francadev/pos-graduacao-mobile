@@ -1,0 +1,30 @@
+# Arquivos de Build e Compilação do Gradle
+**/build/
+**/.gradle/
+
+# Configurações do Android Studio / IntelliJ IDEA
+**/.idea/
+**/*.iml
+**/*.iws
+**/*.ipr
+**/out/
+
+# Arquivos locais e específicos da máquina (NUNCA envie para o GitHub)
+**/local.properties
+**/.cxx/
+**/.externalNativeBuild/
+
+# Arquivos de chaves e assinaturas
+**/*.jks
+**/*.keystore
+
+# Logs e relatórios de teste
+**/captures/
+**/.navigation/
+**/lint/intermediates/
+**/lint/generated/
+**/lint/reports/
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
