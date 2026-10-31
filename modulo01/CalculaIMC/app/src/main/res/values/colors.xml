@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">#4F37F4</color>
+    <color name="primary_dark">#3B24D4</color>
+    <color name="primary_light">#EEF2FF</color>
+    <color name="purple_badge">#20FFFFFF</color>
+    <color name="background_screen">#F3F4F6</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="input_background">#F8FAFC</color>
+    <color name="input_stroke">#E2E8F0</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

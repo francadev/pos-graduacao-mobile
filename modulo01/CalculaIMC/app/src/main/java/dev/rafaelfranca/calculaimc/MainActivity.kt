@@ -1,6 +1,7 @@
 package dev.rafaelfranca.calculaimc
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -10,13 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.text.DecimalFormat
-import kotlin.math.pow
+import java.text.NumberFormat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var etPeso: EditText
     private lateinit var etAltura: EditText
     private lateinit var tvResultado: TextView
+    private lateinit var tvClassificacao: TextView
     private lateinit var btCalcular: Button
     private lateinit var btLimpar: Button
 
@@ -33,11 +36,12 @@ class MainActivity : AppCompatActivity() {
         etPeso = findViewById(R.id.etPeso)
         etAltura = findViewById(R.id.etAltura)
         tvResultado = findViewById(R.id.tvResultado)
+        tvClassificacao = findViewById(R.id.tvClassificacao)
         btCalcular = findViewById(R.id.btCalcular)
         btLimpar = findViewById(R.id.btLimpar)
 
         btCalcular.setOnClickListener {
-            Toast.makeText(this,"Botão 'Calcular' clicado!",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_bt_calcular_clicado), Toast.LENGTH_SHORT).show()
             btCalcularOnClick()
         }
 
@@ -46,37 +50,50 @@ class MainActivity : AppCompatActivity() {
         }
 
         btCalcular.setOnLongClickListener {
-            Toast.makeText(this,"Botão calcular IMC de clique longo",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_bt_calcular_long_click), Toast.LENGTH_SHORT).show()
             false
         }
 
         btLimpar.setOnLongClickListener {
-            Toast.makeText(this,"Botão limpar de clique longo!",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_bt_limpar_long_click), Toast.LENGTH_SHORT).show()
             true
         }
-    }  // fim do onCreate()
+    }
 
     private fun btCalcularOnClick() {
-        var resultado: Double = 0.0
-
-        val peso: Double = etPeso.text.toString().toDoubleOrNull() ?: run {
-            etPeso.error = "Campo peso deve ser informado!"
+        val peso = ImcCalculator.parseInputDouble(etPeso.text.toString()) ?: run {
+            etPeso.error = getString(R.string.error_peso)
             etPeso.requestFocus()
             return
         }
-        val altura: Double = etAltura.text.toString().toDoubleOrNull() ?: run {
-            etAltura.error = "Campo altura deve ser informado!"
+        val altura = ImcCalculator.parseInputDouble(etAltura.text.toString()) ?: run {
+            etAltura.error = getString(R.string.error_altura)
             etAltura.requestFocus()
             return
         }
 
-        resultado = peso / altura.pow(2)
-        tvResultado.text = "%.2f".format(resultado)
+        val isImperial = Locale.getDefault().language == "en"
+        val resultado = ImcCalculator.calcularImc(peso, altura, isImperial)
+
+        if (isImperial) {
+            val nf = NumberFormat.getNumberInstance(Locale.US)
+            val df = nf as DecimalFormat
+            tvResultado.text = df.format(resultado)
+        } else {
+            tvResultado.text = String.format(Locale.forLanguageTag("pt-BR"), "%.2f", resultado)
+        }
+
+        // Torna o resultado visível ao calcular
+        tvResultado.visibility = View.VISIBLE
+        tvClassificacao.text = getString(ImcCalculator.getClassificacaoResId(resultado))
     }
+
     private fun btLimparOnClick() {
         etPeso.text.clear()
         etAltura.text.clear()
-        tvResultado.text = "0.0"
+        tvResultado.text = getString(R.string.resultado_default)
+        tvClassificacao.text = getString(R.string.classificacao_default)
         etPeso.requestFocus()
+        tvResultado.visibility = View.GONE
     }
-} // fim do MainActivity
+}

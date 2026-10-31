@@ -1,3 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CalculaIMC</string>
+
+    <!-- Header -->
+    <string name="app_header_title">Easy BMI</string>
+    <string name="app_header_subtitle">Health calculator</string>
+    <string name="header_title">How is your body today?</string>
+    <string name="header_subtitle">Enter your weight and height to calculate your BMI.</string>
+
+    <!-- Form -->
+    <string name="peso">Weight</string>
+    <string name="hint_peso">E.g.: 154</string>
+    <string name="unit_kg">lbs</string>
+
+    <string name="altura">Height</string>
+    <string name="hint_altura">E.g.: </string>
+    <string name="unit_m">in</string>
+
+    <!-- Buttons -->
+    <string name="btn_calcular">Calculate my BMI</string>
+    <string name="btn_limpar">Clear data</string>
+
+    <!-- Result -->
+    <string name="resultado_header">Your BMI result</string>
+    <string name="resultado_default">0.0</string>
+    <string name="classificacao_default">Fill in the fields above to see your classification.</string>
+    <string name="footer_disclaimer">BMI is only a reference and does not replace an evaluation with a healthcare professional.</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_app_icon">App icon</string>
+
+    <!-- Validation Messages and Toasts -->
+    <string name="error_peso">Weight field must be provided!</string>
+    <string name="error_altura">Height field must be provided!</string>
+    <string name="toast_bt_calcular_clicado">\'Calculate\' button clicked!</string>
+    <string name="toast_bt_calcular_long_click">BMI calculate button long click</string>
+    <string name="toast_bt_limpar_long_click">Clear button long click!</string>
+
+    <!-- BMI Classifications -->
+    <string name="classificacao_abaixo_peso">Underweight</string>
+    <string name="classificacao_peso_normal">Normal weight</string>
+    <string name="classificacao_sobrepeso">Overweight</string>
+    <string name="classificacao_obesidade_1">Obesity Class I</string>
+    <string name="classificacao_obesidade_2">Obesity Class II</string>
+    <string name="classificacao_obesidade_3">Obesity Class III</string>
 </resources>
