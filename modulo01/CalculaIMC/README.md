@@ -1,6 +1,6 @@
 # Calcula IMC - Android básico (Módulo 01)
 
-Projeto desenvolvido durante a primeira aula prática do Módulo 01 (Android Básico) da especialização com o professor Robison Cris Brito.
+Projeto desenvolvido durante a primeira e segunda aula prática do Módulo 01 (Android Básico) da especialização com o professor Robison Cris Brito.
 
 ---
 
