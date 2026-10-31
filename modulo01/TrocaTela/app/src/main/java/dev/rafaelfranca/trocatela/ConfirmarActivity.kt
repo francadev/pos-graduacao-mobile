@@ -1,5 +1,7 @@
 package dev.rafaelfranca.trocatela
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -7,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.net.toUri
 
 class ConfirmarActivity : AppCompatActivity() {
 
@@ -33,5 +36,13 @@ class ConfirmarActivity : AppCompatActivity() {
         tvVaLor.text = intent.getStringExtra("valor")
     }
 
-    fun btSmsOnClick(view: View) {}
+    fun btSmsOnClick(view: View) {
+        val sms_body = "Código: ${tvCod.text}\nQuantidade: ${tvQtd.text}\nValor: ${tvVaLor.text}"
+        val sms_number = "+5511999999999"
+
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.putExtra("sms_body", sms_body)
+        intent.setData("sms:$sms_number".toUri())
+        startActivity(intent)
+    }
 }
