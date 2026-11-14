@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Entrada
         model.nomePlayer1 = binding.txtPlayer1.text.toString()
         model.nomePlayer2 = binding.txtPlayer2.text.toString()
 
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         configurarNavegacao()
     }
 
+    // Entrada
     private val launcherEdicaoNomes = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
@@ -46,22 +48,27 @@ class MainActivity : AppCompatActivity() {
             val antigoNomeP1 = binding.txtPlayer1.text.toString()
             val antigoNomeP2 = binding.txtPlayer2.text.toString()
 
+            // Processamento
             if (!novoNomeP1.isNullOrBlank() && novoNomeP1 != antigoNomeP1) {
                 model.atualizarNomeNoHistorico(antigoNomeP1, novoNomeP1)
                 model.nomePlayer1 = novoNomeP1
+                // Saída
                 binding.txtPlayer1.text = novoNomeP1
             }
 
             if (!novoNomeP2.isNullOrBlank() && novoNomeP2 != antigoNomeP2) {
                 model.atualizarNomeNoHistorico(antigoNomeP2, novoNomeP2)
                 model.nomePlayer2 = novoNomeP2
+                // Saída
                 binding.txtPlayer2.text = novoNomeP2
             }
         }
     }
 
     private fun configurarNavegacao() {
+        // Entrada
         binding.btnHistorico.setOnClickListener {
+            // Saída
             val intent = Intent(this, HistoricoActivity::class.java).apply {
                 putStringArrayListExtra("LISTA_HISTORICO", model.historico)
             }
@@ -69,13 +76,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnZerarPontos.setOnClickListener {
+            // Saída
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.dialog_zerar_pontos_title))
                 .setMessage(getString(R.string.dialog_zerar_pontos_msg))
                 .setPositiveButton(getString(R.string.dialog_sim)) { _, _ ->
+                    // Processamento
                     model.zerarPontos()
-                    atualizarPlacarVisual()
                     model.historico.add(0, getString(R.string.historico_placar_zerado))
+
+                    // Saída
+                    atualizarPlacarVisual()
                     Toast.makeText(this, getString(R.string.toast_pontuacao_zerada), Toast.LENGTH_SHORT).show()
                 }
                 .setNegativeButton(getString(R.string.dialog_nao), null)
@@ -83,15 +94,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.imgJoker.setOnClickListener {
+            // Saída
             Toast.makeText(this, "Desenvolvido com ❤\uFE0F por francadev\nAproveite o jogo!", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnZerarHistorico.setOnClickListener {
+            // Saída
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.dialog_zerar_historico_title))
                 .setMessage(getString(R.string.dialog_zerar_historico_msg))
                 .setPositiveButton(getString(R.string.dialog_sim)) { _, _ ->
+                    // Processamento
                     model.zerarHistorico()
+
+                    // Saída
                     Toast.makeText(this, getString(R.string.toast_historico_apagado), Toast.LENGTH_SHORT).show()
                 }
                 .setNegativeButton(getString(R.string.dialog_nao), null)
@@ -108,6 +124,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun abrirEdicao(focoPlayer: Int) {
+        // Saída
         val intent = Intent(this, EdicaoNomesActivity::class.java).apply {
             putExtra("FOCO_PLAYER", focoPlayer)
             putExtra("NOME_ATUAL_PLAYER1", binding.txtPlayer1.text.toString())
@@ -117,6 +134,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun configurarBotoesPontuacao() {
+        // Entrada
         binding.btnMais1Player1.setOnClickListener { alterarPontos(1, 1) }
         binding.btnMais3Player1.setOnClickListener { alterarPontos(1, 3) }
         binding.btnMais6Player1.setOnClickListener { alterarPontos(1, 6) }
@@ -133,15 +151,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alterarPontos(player: Int, valor: Int) {
+        // Entrada
         val nomeP1 = binding.txtPlayer1.text.toString()
         val nomeP2 = binding.txtPlayer2.text.toString()
         model.nomePlayer1 = nomeP1
         model.nomePlayer2 = nomeP2
 
+        // Processamento
         val resultado = model.alterarPontos(player, valor)
         val nomeAtivo = if (player == 1) nomeP1 else nomeP2
         val sinal = if (valor > 0) "+$valor" else "$valor"
 
+        // Saída
         when (resultado) {
             MarcadorTrucoModel.StatusAlteracaoPontos.PONTUACAO_MINIMA_ATINGIDA -> {
                 Toast.makeText(this, getString(R.string.toast_pontuacao_minima), Toast.LENGTH_SHORT).show()
@@ -171,6 +192,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun atualizarPlacarVisual() {
+        // Saída
         binding.txtNumPontosPlayer1.text = model.pontosPlayer1.toString()
         binding.txtNumPontosPlayer2.text = model.pontosPlayer2.toString()
 

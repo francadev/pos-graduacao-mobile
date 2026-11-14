@@ -8,7 +8,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import dev.rafaelfranca.marcadortruco.databinding.ItemHistoricoBinding
 
-class HistoricoAdapter (
+class HistoricoAdapter(
+    // Entrada
     private val listaJogadas: List<String>
 ) : RecyclerView.Adapter<HistoricoAdapter.HistoricoViewHolder>() {
 
@@ -16,6 +17,7 @@ class HistoricoAdapter (
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoricoViewHolder {
+        // Saída
         val binding = ItemHistoricoBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
@@ -25,25 +27,34 @@ class HistoricoAdapter (
     }
 
     override fun onBindViewHolder(holder: HistoricoViewHolder, position: Int) {
+        // Entrada
         val jogada = listaJogadas[position]
-        holder.binding.txtDescricaoJogada.text = jogada
 
+        // Processamento
         val context = holder.itemView.context
-        if (jogada.contains("VENCEU A PARTIDA") || jogada.contains("★")) {
-            val corVitoria = ContextCompat.getColor(context, R.color.historico_vitoria_text)
-            holder.binding.txtDescricaoJogada.setTextColor(corVitoria)
-            holder.binding.txtDescricaoJogada.typeface = Typeface.DEFAULT_BOLD
+        val ehVitoria = jogada.contains("VENCEU A PARTIDA") || jogada.contains("★")
+
+        val corTexto: Int
+        val estiloFonte: Typeface
+
+        if (ehVitoria) {
+            corTexto = ContextCompat.getColor(context, R.color.historico_vitoria_text)
+            estiloFonte = Typeface.DEFAULT_BOLD
         } else {
             val typedValue = TypedValue()
             context.theme.resolveAttribute(android.R.attr.textColorPrimary, typedValue, true)
-            val corPadrao = if (typedValue.resourceId != 0) {
+            corTexto = if (typedValue.resourceId != 0) {
                 ContextCompat.getColor(context, typedValue.resourceId)
             } else {
                 typedValue.data
             }
-            holder.binding.txtDescricaoJogada.setTextColor(corPadrao)
-            holder.binding.txtDescricaoJogada.typeface = Typeface.DEFAULT
+            estiloFonte = Typeface.DEFAULT
         }
+
+        // Saída
+        holder.binding.txtDescricaoJogada.text = jogada
+        holder.binding.txtDescricaoJogada.setTextColor(corTexto)
+        holder.binding.txtDescricaoJogada.typeface = estiloFonte
     }
 
     override fun getItemCount(): Int = listaJogadas.size

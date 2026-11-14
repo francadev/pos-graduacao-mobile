@@ -28,8 +28,13 @@ class HistoricoActivity : AppCompatActivity() {
             finish()
         }
 
+        // Entrada
         val listaJogadas = intent.getStringArrayListExtra("LISTA_HISTORICO") ?: arrayListOf()
+
+        // Processamento
         val adapter = HistoricoAdapter(listaJogadas)
+
+        // Saída
         binding.rvHistorico.adapter = adapter
     }
 }
