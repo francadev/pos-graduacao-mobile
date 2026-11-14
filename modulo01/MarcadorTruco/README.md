@@ -26,3 +26,7 @@ Principais arquivos do projeto: [activity_main.xml](app/src/main/res/layout/acti
 
 - **Validação de interação e estado:** Fluxos automatizados com Espresso e `ActivityScenario` cobrindo adição/subtração de pontos, acionamento de diálogos `AlertDialog` e resete de placar.
 - **Integração entre telas:** Testes instrumentados validando a navegação entre a tela principal, formulário de edição de nomes e visualização da lista de histórico.
+
+## Download (APK)
+
+Baixe a versão de testes diretamente pelo arquivo [MarcadorTruco (app-debug.apk)](app/build/outputs/apk/debug/app-debug.apk).
