@@ -1,3 +1,44 @@
 <resources>
-    <string name="app_name">MarcadorTruco</string>
+    <string name="app_name">Truco Scorekeeper</string>
+
+    <string name="player1_default">Player 1</string>
+    <string name="player2_default">Player 2</string>
+    <string name="vitorias_default">Wins: 0</string>
+    <string name="vitorias_format">Wins: %1$d</string>
+    <string name="vitorias_com_estrela_format">Wins: %1$d ⭐</string>
+    <string name="label_pontos">Points</string>
+
+    <string name="btn_ver_historico">View match history</string>
+    <string name="btn_zerar_pontos">Reset points and wins</string>
+    <string name="btn_zerar_historico">Clear history</string>
+
+    <string name="dialog_zerar_pontos_title">Reset points</string>
+    <string name="dialog_zerar_pontos_msg">Do you really want to reset the scores?</string>
+    <string name="dialog_zerar_historico_title">Clear history</string>
+    <string name="dialog_zerar_historico_msg">Do you really want to clear the history?</string>
+    <string name="dialog_sim">Yes</string>
+    <string name="dialog_nao">No</string>
+
+    <string name="toast_pontuacao_zerada">Scores reset!</string>
+    <string name="toast_historico_apagado">History successfully cleared!</string>
+    <string name="toast_jogador_venceu">%1$s won!</string>
+    <string name="toast_pontuacao_minima">Score is already 0. This won\'t be recorded in history.</string>
+
+    <string name="historico_pontos_marcados">%1$s scored %2$s points (Score: %3$d x %4$d)</string>
+    <string name="historico_pontos_sem_placar">%1$s scored %2$s points</string>
+    <string name="historico_jogador_venceu">★ %1$s WON THE GAME! ★</string>
+    <string name="historico_placar_zerado">Scores reset!</string>
+
+    <string name="titulo_editar_nomes">Edit names</string>
+    <string name="hint_player1">Player 1 Name</string>
+    <string name="hint_player2">Player 2 Name</string>
+    <string name="btn_salvar">Save</string>
+
+    <string name="toast_limite_caracteres">30-character limit reached!</string>
+    <string name="toast_nome_obrigatorio">At least one character is required to save!</string>
+
+    <string name="titulo_historico">Match History</string>
+    <string name="cd_voltar">Back</string>
+    <string name="cd_editar_nome">Edit name</string>
+    <string name="history_item">Player 1 scored +3 points (Score: 3–0)</string>
 </resources>

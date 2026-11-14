@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.MarcadorTruco" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/btn_historico_background</item>
+        <item name="colorAccent">@color/btn_historico_background</item>
+        <item name="colorControlActivated">@color/icon_tint</item>
     </style>
 </resources>

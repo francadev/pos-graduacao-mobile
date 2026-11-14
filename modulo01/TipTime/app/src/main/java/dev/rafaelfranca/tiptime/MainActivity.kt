@@ -1,8 +1,8 @@
 package dev.rafaelfranca.tiptime
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -65,6 +65,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         displayTip(tip)
+    }
+
+    fun showClearHistoryDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Limpar")
+            .setMessage("Deseja realmente apagar?")
+            .setPositiveButton("Sim") { dialog, _ ->
+                clearHistory()
+                dialog.dismiss()
+            }
+            .setNegativeButton("Não") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
+    }
+
+    fun clearHistory() {
+        binding.costOfService.setText("")
+        binding.tipOption.check(R.id.option_twenty_percent)
+        binding.roundUpSwitch.isChecked = true
+        displayTip(0.0)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

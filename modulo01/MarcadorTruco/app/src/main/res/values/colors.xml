@@ -2,4 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="icon_tint">#FF000000</color>
+    <color name="historico_vitoria_text">#FFD97706</color>
+
+    <color name="btn_soma_background">#FF212121</color>
+    <color name="btn_soma_text">#FFFFFFFF</color>
+
+    <color name="btn_subtrair_background">#ef2b3d</color>
+    <color name="btn_subtrair_text">#FFFFFFFF</color>
+
+    <color name="btn_historico_background">#2a6896</color>
+    <color name="btn_historico_text">#FFFFFFFF</color>
+
+    <color name="btn_zerar_pontos_background">#f29329</color>
+    <color name="btn_zerar_historico_background">#ef2b3d</color>
+    <color name="btn_zerar_text">#FFFFFFFF</color>
 </resources>

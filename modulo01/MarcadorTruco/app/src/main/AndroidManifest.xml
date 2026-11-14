@@ -22,7 +22,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EdicaoNomes"
+            android:name=".EdicaoNomesActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".HistoricoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
