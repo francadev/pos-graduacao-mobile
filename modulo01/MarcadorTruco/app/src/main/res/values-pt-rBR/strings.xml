@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Marcador de Truco</string>
+
+    <string name="player1_default">Jogador 1</string>
+    <string name="player2_default">Jogador 2</string>
+    <string name="vitorias_default">Vitórias: 0</string>
+    <string name="vitorias_format">Vitórias: %1$d</string>
+    <string name="vitorias_com_estrela_format">Vitórias: %1$d ⭐</string>
+    <string name="label_pontos">Pontos</string>
+
+    <string name="btn_ver_historico">Ver histórico de jogadas</string>
+    <string name="btn_zerar_pontos">Zerar pontos e vitórias</string>
+    <string name="btn_zerar_historico">Zerar histórico</string>
+
+    <string name="dialog_zerar_pontos_title">Zerar pontos</string>
+    <string name="dialog_zerar_pontos_msg">Deseja realmente zerar a pontuação?</string>
+    <string name="dialog_zerar_historico_title">Zerar histórico</string>
+    <string name="dialog_zerar_historico_msg">Deseja realmente apagar o histórico?</string>
+    <string name="dialog_sim">Sim</string>
+    <string name="dialog_nao">Não</string>
+
+    <string name="toast_pontuacao_zerada">Pontuação zerada!</string>
+    <string name="toast_historico_apagado">Histórico apagado com sucesso!</string>
+    <string name="toast_jogador_venceu">%1$s venceu!</string>
+    <string name="toast_pontuacao_minima">A pontuação já está em 0. Isso não ficará gravado no histórico.</string>
+
+    <string name="historico_pontos_marcados">%1$s marcou %2$s pontos (Placar: %3$d x %4$d)</string>
+    <string name="historico_pontos_sem_placar">%1$s marcou %2$s pontos</string>
+    <string name="historico_jogador_venceu">★ %1$s VENCEU A PARTIDA! ★</string>
+    <string name="historico_placar_zerado">Placar zerado!</string>
+
+    <string name="titulo_editar_nomes">Editar nomes</string>
+    <string name="hint_player1">Nome do Jogador 1</string>
+    <string name="hint_player2">Nome do Jogador 2</string>
+    <string name="btn_salvar">Salvar</string>
+
+    <string name="toast_limite_caracteres">Limite de 30 caracteres atingido!</string>
+    <string name="toast_nome_obrigatorio">Para salvar é necessário pelo menos um caractere!</string>
+
+    <string name="titulo_historico">Histórico de jogadas</string>
+    <string name="cd_voltar">Voltar</string>
+    <string name="cd_editar_nome">Editar nome</string>
+    <string name="history_item">Player 1 marcou +3 pontos (Placar: 3 x 0)</string>
+</resources>

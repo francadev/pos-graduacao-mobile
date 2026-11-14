@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="icon_tint">#FFFFFFFF</color>
+
+    <color name="historico_vitoria_text">#FFFFD54F</color>
+
+    <color name="btn_soma_background">#FFFFFFFF</color>
+    <color name="btn_soma_text">#FF121212</color>
+
+    <color name="btn_subtrair_background">#ef2b3d</color>
+    <color name="btn_subtrair_text">#FFFFFFFF</color>
+
+    <color name="btn_historico_background">#2a6896</color>
+    <color name="btn_historico_text">#FFFFFFFF</color>
+
+    <color name="btn_zerar_pontos_background">#f29329</color>
+    <color name="btn_zerar_historico_background">#ef2b3d</color>
+    <color name="btn_zerar_text">#FFFFFFFF</color>
+</resources>

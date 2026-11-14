@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CalculaIMC</string>
+
+    <!-- Header -->
+    <string name="app_header_title">IMC Fácil</string>
+    <string name="app_header_subtitle">Calculadora de saúde</string>
+    <string name="header_title">Como está o seu corpo hoje?</string>
+    <string name="header_subtitle">Informe seu peso e altura para calcular seu IMC.</string>
+
+    <!-- Formulário -->
+    <string name="peso">Peso</string>
+    <string name="hint_peso">Ex.: 70</string>
+    <string name="unit_kg">kg</string>
+
+    <string name="altura">Altura</string>
+    <string name="hint_altura">Ex.: 1,75</string>
+    <string name="unit_m">m</string>
+
+    <!-- Botões -->
+    <string name="btn_calcular">Calcular meu IMC</string>
+    <string name="btn_limpar">Limpar dados</string>
+
+    <!-- Resultado -->
+    <string name="resultado_header">Resultado do seu IMC</string>
+    <string name="resultado_default">0.0</string>
+    <string name="classificacao_default">Preencha os dados acima para ver sua classificação.</string>
+    <string name="footer_disclaimer">O IMC é apenas uma referência e não substitui uma avaliação com um profissional de saúde.</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_app_icon">Ícone do aplicativo</string>
+
+    <!-- Mensagens de Validação e Toasts -->
+    <string name="error_peso">Campo peso deve ser informado!</string>
+    <string name="error_altura">Campo altura deve ser informado!</string>
+    <string name="toast_bt_calcular_clicado">Botão \'Calcular\' clicado!</string>
+    <string name="toast_bt_calcular_long_click">Botão calcular IMC de clique longo</string>
+    <string name="toast_bt_limpar_long_click">Botão limpar de clique longo!</string>
+
+    <!-- Classificações do IMC -->
+    <string name="classificacao_abaixo_peso">Abaixo do peso</string>
+    <string name="classificacao_peso_normal">Peso normal</string>
+    <string name="classificacao_sobrepeso">Sobrepeso</string>
+    <string name="classificacao_obesidade_1">Obesidade Grau I</string>
+    <string name="classificacao_obesidade_2">Obesidade Grau II</string>
+    <string name="classificacao_obesidade_3">Obesidade Grau III</string>
+</resources>
